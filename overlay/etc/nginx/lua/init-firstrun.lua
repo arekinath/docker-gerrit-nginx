@@ -37,7 +37,7 @@ if ffi.C.access('/nginx-certs/account-key.pem', R_OK) ~= 0 or
 	assert(os.execute(
 	    '/usr/bin/openssl x509 -req -days 1 -in /nginx-certs/nginx-csr.pem ' ..
 	    '-signkey /nginx-certs/nginx-key.pem -out /nginx-certs/nginx-cert.pem') == 0)
-	
+
 	assert(os.execute(
 	    'ln -sf nginx-main.conf /etc/nginx/nginx.conf') == 0)
 end
